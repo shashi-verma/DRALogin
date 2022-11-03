@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiktrack</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .login_header {
+        height: 66px;
+        box-shadow: 0px 4px 20px 0px #00000040;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 61px 0 33px;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+      .page-form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+      }
+      #api {
+        border-radius: 0.25rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        height: 100%;
+      }
+      .heading {
+        margin-top: 75px;
+      }
+      .localAccount {
+        width: 100%;
+      }
+      .intro > h2 {
+        text-align: center;
+        font-weight: 400;
+      }
+      input {
+        background: #f2f2f2;
+        height: 43.2px;
+        font-family: "Poppins", sans-serif;
+        font-size: 13.14px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        border: none;
+        border-radius: 6px;
+        width: 100%;
+        outline: none;
+        padding: 8px 16px;
+      }
+      input::placeholder {
+        color: #c6c6c6;
+      }
+      label {
+        display: none;
+      }
+      .entry {
+        padding: 0px 30px;
+      }
+      .entry-item {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 10px 0px;
+      }
+      #forgotPassword {
+        font-family: "Poppins", sans-serif;
+        font-size: 13.14px;
+        font-weight: 700;
+        letter-spacing: 0em;
+        color: #3b6dcd;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        margin-top: 26px;
+        text-align: center;
+      }
+      button {
+        outline: none;
+        border: none;
+        padding: 10px 0px;
+        width: 100%;
+        cursor: pointer;
+        background: #3b6dcd;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-radius: 6px;
+        margin-top: 25px;
+      }
+      .divider {
+        display: none;
+      }
+      .create {
+        font-family: "Poppins", sans-serif;
+        font-size: 13.14px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        margin-bottom: 0;
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .create a {
+        font-weight: 700;
+        color: #3b6dcd;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .intro {
+        margin: 25px 0px;
+      }
+      .policy-section {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 36px;
+        color: #3b6dcd;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      .policy{
+        border-right: 1px solid;
+        padding-right: 67px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="login_header">
+      
+    </header>
+    <div class="page-form-wrapper">
+      <div id="api" data-name="Unified">
+        <div class="heading">
+          <img height="100px" width="100px" class="QT-logo" src="" alt="" />
+        </div>
+        <form
+          id="localAccountForm"
+          action="JavaScript:void(0);"
+          class="localAccount"
+          aria-label="Sign in with your email address"
+        >
+          <div class="intro">
+            <h2 aria-level="1">Secure Login</h2>
+          </div>
+          <div
+            class="error pageLevel"
+            aria-hidden="true"
+            role="alert"
+            style="display: none"
+          >
+            <p></p>
+          </div>
+          <div class="entry">
+            <div class="entry-item">
+              <label for="email"> Email Address </label>
+              <div
+                class="error itemLevel"
+                aria-hidden="true"
+                role="alert"
+                style="display: none"
+              >
+                <p></p>
+              </div>
+              <input
+                type="email"
+                id="email"
+                name="Email Address"
+                title="Please enter a valid Email Address"
+                pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
+                autofocus=""
+                placeholder="Username / Email"
+                aria-label="Email Address"
+              />
+            </div>
+            <div class="entry-item">
+              <div class="create">
+                <p>Don't have an account?</p>
+                <p>
+                  <a class="signup"
+                    id="createAccount"
+                    href="/quicktrak.onmicrosoft.com/B2C_1_quicktrak/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=aCtoMjZhNUYzaVlTTUsxaC9TYzhVN3NwemZNZHRHeGk1OEUxQ2FZREZRbnFmY0tYQzZJdi9UaTRVZjBlSEh4cWtMZW5ZTlV6dlkraTFlc00vSTVURmc9PTsyMDIyLTA5LTMwVDA3OjE5OjA4Ljk3OTIxNjhaO3c2RW5jb0tsZTJpSy9pNlZubHM5UHc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJkZTRmMDRiYS0wOGJkLTQ0MTUtYTA4Zi1lYjQ0MWU0MGI1MzkifQ&amp;p=B2C_1_quicktrak"
+                    >Register</a
+                  >
+                </p>
+              </div>
+              <div
+                class="error itemLevel"
+                aria-hidden="true"
+                style="display: none"
+              >
+                <p role="alert"></p>
+              </div>
+              <input
+                type="password"
+                id="password"
+                name="Password"
+                placeholder="Password"
+                aria-label="Password"
+                autocomplete="current-password"
+                aria-required="true"
+              />
+            </div>
+            <div class="working"></div>
+
+            <div class="buttons">
+              <button id="next" type="submit" form="localAccountForm">
+                Login
+              </button>
+            </div>
+          </div>
+          <div class="divider">
+            <h2>OR</h2>
+          </div>
+          <div class="password-label">
+            <label for="password">Password</label>
+            <a
+              id="forgotPassword"
+              href="/quicktrak.onmicrosoft.com/B2C_1_quicktrak/api/CombinedSigninAndSignup/forgotPassword?csrf_token=aCtoMjZhNUYzaVlTTUsxaC9TYzhVN3NwemZNZHRHeGk1OEUxQ2FZREZRbnFmY0tYQzZJdi9UaTRVZjBlSEh4cWtMZW5ZTlV6dlkraTFlc00vSTVURmc9PTsyMDIyLTA5LTMwVDA3OjE5OjA4Ljk3OTIxNjhaO3c2RW5jb0tsZTJpSy9pNlZubHM5UHc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJkZTRmMDRiYS0wOGJkLTQ0MTUtYTA4Zi1lYjQ0MWU0MGI1MzkifQ&amp;p=B2C_1_quicktrak"
+              >Forgot your password?</a
+            >
+          </div>
+        </form>
+        <div class="policy-section">
+          <p class="policy">Privacy Policy</p>
+          <p class="terms">Terms & Conditions</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var resData = {};
+    let url = "https://web.stg.revoquest.com/DRAPI/clientinfo/getclientinfo/19";
+    let option = {
+      Method: "GET",
+      Headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+    };
+
+    function load(url, option) {
+      return new Promise(async function (resolve, reject) {
+        const res = await fetch(url, option);
+        resolve(res.json());
+      });
+    }
+    const promise = load(url, option);
+
+    promise.then((response) => {
+      resData = response.map((ele) => {
+        var arr = ele.TaskDetail.Client_Preferences.elements;
+        return arr;
+      });
+      document.querySelectorAll("button").forEach((btn, i) => {
+        btn.style.backgroundColor = "#" + resData[0][3].value;
+      });
+      document.querySelectorAll('.signup').forEach((a,i)=>{
+        a.style.color="#" + resData[0][3].value;
+      })
+      document.querySelectorAll('.policy').forEach((a,i)=>{
+        a.style.color="#" + resData[0][3].value;
+      })
+      document.querySelectorAll('.terms').forEach((a,i)=>{
+        a.style.color="#" + resData[0][3].value;
+      })
+      document.querySelectorAll('#forgotPassword').forEach((a,i)=>{
+        a.style.color="#" + resData[0][3].value;
+      })
+
+      document.querySelectorAll(".QT-logo").forEach((img, i) => {
+        img.setAttribute(
+          "src",
+          "data:AFC_Logo_Small.jpg;base64 ," + resData[0][2].values.data
+        );
+      });
+      console.log(resData);
+    });
+  </script>
+</html>
